@@ -55,7 +55,7 @@
                 menu_ID[i] = GM_registerMenuCommand(`${menu_ALL[i][3]?'✅':'❌'} ${menu_ALL[i][1]}`, function(){menu_switch(`${menu_ALL[i][3]}`,`${menu_ALL[i][0]}`,`${menu_ALL[i][2]}`)});
             }
         }
-        menu_ID[menu_ID.length] = GM_registerMenuCommand('💬 反馈 & 建议', function () {window.GM_openInTab('https://hostloc.com/space-uid-47519.html', {active: true,insert: true,setParent: true});});
+        menu_ID[menu_ID.length] = GM_registerMenuCommand('💬 反馈 & 建议', function () {window.GM_openInTab('https://github.com/MCTGqwq/hostloc-helper/issues', {active: true,insert: true,setParent: true});});
         menu_ID[menu_ID.length] = GM_registerMenuCommand('q(≧▽≦q) 打赏一下', function () {window.GM_openInTab('https://afdian.net/@mctgnb', {active: true,insert: true,setParent: true});});
     }
 

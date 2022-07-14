@@ -355,10 +355,12 @@
 
 
     // 自定义小尾巴内容
+    if (menu_customLittleTail = "") {
+           GM_setValue('menu_customLittleTail', "\\n\\n 这是[url=https://github.com/MCTGqwq/hostloc-helper][b]全球主机交流论坛增强修改版的默认内容[/b][/url] \\n 点击右上角设置修改尾巴内容 \\n 下载链接: https://github.com/MCTGqwq/hostloc-helper");
+    }
     function customLittleTail() {
         let newLittleTail = prompt('编辑 [自定义小尾巴内容]，刷新网页后生效（换行请使用 \\n\n提示①：记得在小尾巴前面加上几个 \\n 换行，用来分隔开回帖内容~\n提示②：建议使用 [align=right] 标签来使小尾巴居右~\n提示③：支持论坛富文本标签（建议先找个回复编辑预览好~\n示例：\\n\\n\\n\\n[align=right]第一行内容~\\n第二行内容~[/align]', GM_getValue('menu_customLittleTail'));
         if (newLittleTail === '') {
-            GM_setValue('menu_customLittleTail', '');
             registerMenuCommand(); // 重新注册脚本菜单
         } else if (newLittleTail != null) {
             GM_setValue('menu_customLittleTail', newLittleTail);

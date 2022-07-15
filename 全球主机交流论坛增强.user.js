@@ -16,6 +16,7 @@
 // @grant        unsafeWindow
 // @license      GPL-3.0 License
 // @run-at       document-end
+// @namespace https://greasyfork.org/users/935594
 // ==/UserScript==
 
 (function() {
@@ -26,7 +27,8 @@
         ['menu_customLittleTail', '回帖小尾巴', '回帖小尾巴', ''],
         ['menu_pageLoading', '自动无缝翻页', '自动无缝翻页', true],
         ['menu_thread_pageLoading', '帖子内自动翻页', '帖子内自动翻页', true],
-        ['menu_showhide', '显示帖内隐藏回复', '显示帖内隐藏回复', true]
+        ['menu_showhide', '显示帖内隐藏回复', '显示帖内隐藏回复', true],
+        ['menu_img', '使用默认头像', '使用默认头像', true]
     ], menu_ID = [];
     for (let i=0;i<menu_ALL.length;i++){ // 如果读取到的值为 null 就写入默认值
         if (GM_getValue(menu_ALL[i][0]) == null){GM_setValue(menu_ALL[i][0], menu_ALL[i][3])};
@@ -186,6 +188,7 @@
     if(menu_value('menu_autoSignIn')) autoSignIn(); //  自动签到（访问空间 10 次 = 20 积分）
     //replyIntervalDOMNodeInserted(); //                 监听插入事件（回帖间隔）
 
+    if(menu_value('menu_img')) for (var i = document.getElementsByClassName("avtm").length - 1; i >= 0; i--) {document.getElementsByClassName("avtm")[i].innerHTML="<a><img src=\"https://www.hostloc.com/uc_server/avatar.php\"></a>";} //  自动签到（访问空间 10 次 = 20 积分）
 
     // 自动签到（访问空间 10 次 = 20 积分 + 当天首次访问论坛 2 积分）
     function autoSignIn() {

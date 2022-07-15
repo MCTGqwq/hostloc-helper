@@ -60,16 +60,16 @@
     }
 
     // 菜单开关
-//    function menu_switch(menu_status, Name, Tips) {
-//        if (menu_status == 'true'){
-//            GM_setValue(`${Name}`, false);
+    function menu_switch(menu_status, Name, Tips) {
+        if (menu_status == 'true'){
+            GM_setValue(`${Name}`, false);
 //            GM_notification({text: `已关闭 [${Tips}] 功能\n（点击刷新网页后生效）`, timeout: 3500, onclick: function(){location.reload();}});
-//        }else{
-//            GM_setValue(`${Name}`, true);
+        }else{
+            GM_setValue(`${Name}`, true);
 //            GM_notification({text: `已开启 [${Tips}] 功能\n（点击刷新网页后生效）`, timeout: 3500, onclick: function(){location.reload();}});
-//        }
-//       registerMenuCommand(); // 重新注册脚本菜单
-//    };
+        }
+       registerMenuCommand(); // 重新注册脚本菜单
+    };
 
     // 返回菜单值
     function menu_value(menuName) {
